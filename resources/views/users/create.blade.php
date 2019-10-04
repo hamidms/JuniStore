@@ -6,6 +6,12 @@
 
   <div class="col-md-8">
 
+    @if(session('status'))
+      <div class="alert alert-success">
+        {{session('status')}}
+      </div>
+    @endif 
+
     <form 
         enctype="multipart/form-data" 
         class="bg-white shadow-sm p-3" 
@@ -37,22 +43,19 @@
       <input 
         type="checkbox" 
         name="roles[]" 
-        id="ADMIN" 
-        value="ADMIN"> 
+        id="ADMIN" value="ADMIN"> 
         <label for="ADMIN">Administrator</label>
 
       <input 
         type="checkbox" 
         name="roles[]" 
-        id="STAFF" 
-        value="STAFF"> 
+        id="STAFF" value="STAFF"> 
         <label for="STAFF">Staff</label>
 
       <input 
         type="checkbox" 
         name="roles[]" 
-        id="CUSTOMER" 
-        value="CUSTOMER"> 
+        id="CUSTOMER" value="CUSTOMER"> 
         <label for="CUSTOMER">Customer</label>
       <br>
 
@@ -80,7 +83,8 @@
         type="file" 
         class="form-control">
 
-      <hr class="my-3">
+      <hr 
+        class="my-3">
 
       <label for="email">Email</label>
       <input 
