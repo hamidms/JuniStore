@@ -40,3 +40,5 @@ Route::match(["GET", "POST"], "/register", function(){
 })->name("register");
 
 Route::resource("users", "UserController");
+
+Route::resource('categories', 'CategoryController');
